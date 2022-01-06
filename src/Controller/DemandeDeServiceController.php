@@ -176,30 +176,4 @@ class DemandeDeServiceController extends AbstractController
         return $this->redirectToRoute('demande_service', [], Response::HTTP_SEE_OTHER);
     }
     
-    /**
-    * @Route("/transfert_to_archive/{idDemandeService}", name="transfert_to_archive")
-    */
-    public function transfertToArchive(Request $request, DemandeDeService $demandeDeService): Response 
-    {
-        if ($this->isCsrfTokenValid('delete'.$demandeDeService->getIdDemandeService(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($demandeDeService);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('demande_service', [], Response::HTTP_SEE_OTHER);
-       /* $response = new Response();
-        $em = $this->getDoctrine()->getManager();
-    
-       /* $demandeService = $em->getRepository(DemandeDeService::class)->find($idDemandeService);
-        $archiveService = new ArchiveService;
-    
-        $archiveService->setNom($demandeService->setNom());
-  
-        $em->persist($archiveService);
-        $em->remove($demandeService);
-        $em->flush();
-    
-        return $response; */ 
-    }
 }
