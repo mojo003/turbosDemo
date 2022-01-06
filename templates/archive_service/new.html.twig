@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau service{% endblock %}
+
+{% block body %}
+    <h1>Create new ArchiveService</h1>
+
+    {{ include('archive_service/_form.html.twig') }}
+
+    <a href="{{ path('archive_service_index') }}">back to list</a>
+{% endblock %}

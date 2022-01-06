@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services archivés{% endblock %}
+
+{% block body %}
+    
+    <div class=grille>
+        <aside>
+            <h1>Service archivé</h1>
+        <div class="mb-2">
+           <a href="{{ path('demande_service') }}" class="btn btn-primary button_service_confirmation">Gestion de demandes de services</a>
+        </div
+        >
+        </aside>
+        <aside>
+            <form name="search_form" action="/archive_service" method="GET"></br>
+                <input type="text" id="nom" name="nom" placeholder="Rechercher un service">
+                <input type="submit" value="Rechercher" class="btn btn-primary" >
+                <button type="button" class="btn btn-primary" style="background-color: #005e9e;"><a href="http://127.0.0.1:8000/archive_service"><i class="fa fa-refresh"></i></a></button>
+            </form>                              
+        </aside>
+
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                {#<th>Id</th>#}
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <th>Courriel</th>
+                <th>Description</th>
+                {#<th>DateHeure</th>#}
+                {#<th>Statut</th>#}
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for archive_service in archive_services %}
+            <tr>
+                {#<td>{{ archive_service.id }}</td>#}
+                <td>{{ archive_service.nom }}</td>
+                <td>{{ archive_service.prenom }}</td>
+                <td>{{ archive_service.adresse }}</td>
+                <td>{{ archive_service.telephone }}</td>
+                <td>{{ archive_service.courriel }}</td>
+                <td>{{ archive_service.description }}</td>
+                {#<td>{{ archive_service.dateHeure ? archive_service.dateHeure|date('d-m-Y') : '' }}</td>#}
+                {# <td>{{ archive_service.statut ? 'Yes' : 'No' }}</td> #}
+                <td>
+                    <a href="{{ path('archive_service_show', {'id': archive_service.id}) }}"><span style='font-size:20px;'>&#129488;</span></a>
+                    <a href="{{ path('archive_service_delete', {'id': archive_service.id}) }}">❌</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+ <a href="{{ path('home_employes') }}"><span style='font-size:40px;'>&#9664;</span></a>
+{% endblock %}

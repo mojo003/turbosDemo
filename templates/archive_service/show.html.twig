@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services archivés{% endblock %}
+
+{% block body %}
+    <h1>ArchiveService</h1>
+
+    <table class="table">
+        <tbody>
+            {#<tr>
+                <th>Id</th>
+                <td>{{ archive_service.id }}</td>
+            </tr>#}
+            <tr>
+                <th>Nom</th>
+                <td>{{ archive_service.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ archive_service.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ archive_service.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ archive_service.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Courriel</th>
+                <td>{{ archive_service.courriel }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ archive_service.description }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ archive_service.dateHeure ? archive_service.dateHeure|date('Y-m-d') : '' }}</td>
+            </tr>
+            {#<tr>
+                <th>Statut</th>
+                <td>{{ archive_service.statut ? 'Yes' : 'No' }}</td>
+            </tr>#}
+        </tbody>
+    </table>
+
+    <a href="{{ path('archive_service') }}"><span style='font-size:40px;'>&#9664;</span></a>
+
+
+
+    {{ include('archive_service/_delete_form.html.twig') }}
+{% endblock %}

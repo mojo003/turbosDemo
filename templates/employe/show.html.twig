@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portail Employe{% endblock %}
+
+{% block body %}
+    <h1 class="text-center" style="margin-top:20px">Coordonnées de l'employé</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>IdEmploye</th>
+                <td>{{ employe.idEmploye }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ employe.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ employe.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ employe.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ employe.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Courriel</th>
+                <td>{{ employe.courriel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('liste_employes') }}"><span style='font-size:40px;'>⬅️</span></a>
+
+    <a href="{{ path('form_edit_employe', {'idEmploye': employe.idEmploye}) }}"><span style='font-size:40px;'>📄</span></a>
+
+  
+{% endblock %}
+

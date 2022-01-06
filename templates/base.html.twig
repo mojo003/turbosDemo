@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Bienvenue!{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <link href="{{ asset('css/header.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/formulaireService.css') }}" rel="stylesheet">
+            <link href="{{ asset('css/formPortailEmploye.css') }}" rel="stylesheet"> 
+            <link href="{{ asset('css/home.css') }}" rel="stylesheet"> 
+            <link href="{{ asset('css/recherche.css') }}" rel="stylesheet"> 
+            <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+            {# <script src="script.js" </script> #}
+
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+    </head>
+    <link rel="shortcut icon" type="images/png" href="images/favicon.png"/>
+    <body>
+        {% block header %}
+            <header class=grille>
+                <aside>
+                    <a href="{{path("home")}}"><img src="../images/logo.jpg" alt="logo"/></a>
+                </aside>
+                <aside>
+                    </br>
+                    <h1>Homme à tout faire </h1>    
+                    <h2>Résidentiel et commercial </h2>          
+                    <br />                               
+                </aside>
+                <aside>
+                    {% if app.user %}
+                        <a class="btn btn-primary" style="background-color: #005e9e;" href="{{ path('app_logout') }}">Fermer la session</a></br></br>
+                    {% else %}
+                        <a class="btn btn-primary" style="background-color: #005e9e;" href="{{path("app_login")}}">Portail employé</a></br></br>
+                    {% endif %}
+                    <button type="button" class="btn text-light" style="background-color: #005e9e;">819-919-7888</button>
+                </aside>
+            </header>
+
+
+        {% endblock %}
+
+        {# {% block navbar %}{% include "navbar.html.twig" %}{% endblock %} #}
+        {% block navbar %}
+            <nav class="navbar navbar-expand-lg navbar-light text-light" style="background-color: #005e9e;">
+            <div class="container-fluid ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav justify-content-center">
+                    <li class="nav-item">
+                    <a class="nav-link active text-light" aria-current="page" href="{{path("home")}}">ACCUEIL</a>
+                    </li>  
+                    <li class="nav-item">
+                    <a class="nav-link text-light" href="home_services">GALERIE</a>
+                    </li>
+                    {#<li class="nav-item">
+                    <a class="nav-link text-light" href="/home_services">SERVICES OFFERTS</a>
+                    </li>#}
+                    <li class="nav-item">
+                    <a class="nav-link text-light" href="/form_nouvelle_demande_de_service">CONTACTER</a>
+                    </li>
+                    {% if app.user %}
+                    <li class="nav-item">
+                    <a class="nav-link text-light" href="/home_employes">ADMINISTRATION</a>
+                    </li>
+                    {% else %}
+                    {% endif %}
+                </ul>
+                </div>
+            </div>
+            </nav>
+        {% endblock %}
+
+        {% block body %}{% endblock %}
+        
+        {% block footer %}
+            <footer class=grille>
+                <aside>
+                    <img style="margin-right: 20px" src="../images/argent.png" alt="argent" /> 
+                    <img style="margin-right: 20px" src="../images/credit.png" alt="credit" />
+                    <img style="margin-right: 20px" src="../images/cheque.png" alt="cheque" />
+                    <img src="../images/interac.png" alt="interac" />
+                </aside>
+                <aside>
+                </br> </br>
+                    <em>Copyright</em> 2021<strong></strong> </br>
+                    <p>Entreprise de service <span>Turbos S </span></p>                 
+                    <br />                               
+                </aside>
+                <aside>
+                    <a href="https://www.facebook.com/profile.php?id=100057565894398" target="_blank" ><img class="zoom" src="../images/facebook.png" alt="facebook"/></a>
+                </aside>
+            </footer>
+        
+        {% endblock %}
+    </body>
+</html>

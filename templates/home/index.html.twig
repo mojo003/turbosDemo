@@ -1,0 +1,343 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Turbo S{% endblock %}
+
+{% block body %}
+    {# Modal promotion  
+<script>
+$(document).ready(function() {
+    $("#myModal").modal("show");
+});
+</script>
+
+<div id="myModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header box_modal">
+                <h4 class="modal-title h4_modal"><strong>Promotion</strong></h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body box_modal">
+                <p class="text_modal"><strong>10%</strong> de rabais en vigeur!</p>
+                <p class="text-secondary text_modal"><small>Valide du: 1 juin au 30 juin</small></p>
+            </div>
+            <div class="modal-footer box_modal">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-primary">Nous contacter</button>
+            </div>
+        </div>
+    </div>
+</div> #}
+
+    
+<div class="example-wrapper">
+    {# Carousel start #}
+    {#<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+     
+          
+        </div>
+        <div class="carousel-inner">
+           <div class="carousel-item active">
+            <img src="images/page-accueil-Turbo.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="images/piscine.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="images/escaliers.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+            <img src="images/turb.png" class="d-block w-100" alt="...">
+            </div>
+         
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+        </div> #}
+    {#carousel end #} 
+
+ </div>
+
+
+
+            {#<div class="banner_container">
+                <img src="images/Photo-accueil-Turbo.png" class="d-block w-100 image-banner" alt="...">
+
+
+                    <div class="top-left">
+                        <p class="display-2">Turbo S inc. est une entreprise de Services d’hommes à tout faire 100 % Sherbrookoise !</p>
+                    </div>
+
+                    <div class="centered"> 
+                        <p  class="h2">Envie de rien faire ? Laissez-nous faire !</p>  <br>
+                        <p  class="h2"> Entretien intérieur, extérieur de bâtiment,</p> <br>
+                        <p  class="h3">Entretien de terrain selon les saisons,
+                        Montage de meubles,
+                        Petit déménagement,
+                        Etc...
+                        </p>
+                        <p  class="h3">SOUMISSION GRATUITE </p> 
+                    
+                    </div>
+      
+                    
+
+                </div>
+            </div> #}
+
+            <div class="overlay-image">
+            <img class="image image-bck" src="images/Photo-accueil-Turbo.png" alt="vacances" />
+            <div class="text">Turbo S inc. est une entreprise de Services d’hommes à tout faire 100 % Sherbrookoise !
+                </br>Envie de rien faire ? Laissez-nous faire !
+                </br>Entretien intérieur, extérieur de bâtiment,
+                </br>Montage de meubles,
+                </br>Petit déménagement, etc...
+                </br>SOUMISSION GRATUITE</div>
+            </a></div>
+
+
+            <style>
+
+            .overlay-image {
+            position: relative;
+            width: 100%;
+            }
+
+            /* Original image */
+            .overlay-image .image {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: relative;
+            }
+
+            /* Original text overlay */
+            .overlay-image .text {
+            color: black;
+            font-size: 30px;
+            line-height: 1.5em;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            font-weight: bold;
+            }
+
+            @keyframes fadein {
+                0%   { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            .text {
+                -webkit-animation: fadein 2s ease-in;
+                -moz-animation: fadein 2s ease-in;
+                animation: fadein 2s ease-in;
+            }
+
+            .image-bck {
+                opacity: 0.5;
+            }
+            @media only screen and (max-width: 600px) {
+                .overlay-image .text {
+                    font-size: 16px;
+                }
+            }
+
+           {# .banner_container {
+                position: relative;
+                text-align: center;
+                color: black;
+            }
+              .centered {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: black;
+              font-weight: bold;
+                }
+
+                .bottom-right {
+                 position: absolute;
+                 bottom: 8px;
+                 right: 16px;
+                 color: black;
+               }
+
+               .top-left {
+                position: absolute;
+                top: 10px;
+                left: 16px;
+               color: black;
+               font-size
+            }
+
+            .top-left p {
+                font-weight: bold;
+            }
+
+            .centered p {
+                font-weight: bold;
+            }
+
+            .image-banner {
+                opacity: 0.5;
+            }
+
+            @media only screen and (max-width: 600px) {
+
+                .centered {
+                    top: 60%;
+                }
+
+                .centered p {
+                    font-size: 13px;
+                    font-weight: bold;
+
+                }
+
+                .bottom-right p {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
+                .top-left p  {
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+            } #}
+             </style> 
+
+
+        
+    {# Galerie start#}
+    <h1 class="text-center" style="margin-top:100px">Galerie</h1>
+    <div style="margin:20px 150px 50px 150px">
+        <div class="row">
+            <div class="col-md-4 scroll_img">
+                <div>
+                <a href="/home_services">
+                    <img src="images/batiment.PNG" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                    <div class="caption"></br>
+                    </div>
+                </a>
+                <p style="margin-top:20px">Nettoyage de bâtiment intérieur/extérieur </p>
+                </div>
+            </div>
+            <div class="col-md-4 scroll_img">
+                <div>
+                <a href="/home_services">
+                    <img src="images/cedres.png" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                    <div class="caption"></br>
+                    </div>
+                </a>
+                <p style="margin-top:20px">Taille de haies de cèdres </p>
+                </div>
+            </div>
+            <div class="col-md-4 scroll_img">
+                <div>
+                <a href="/home_services">
+                    <img src="images/nettoyage.png" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                </a>
+                <p style="margin-top:20px">Lavage avec nettoyeur haute pression </p>
+                </div>
+            </div>
+            </div>
+            <div class="row" style="margin-top:20px ">
+                <div class="col-md-4 scroll_img">
+                    <div>
+                    <a href="/home_services">
+                        <img src="images/pavage.PNG" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                    </a>
+                    <p style="margin-top:20px">Pose de pavé-unis</p>
+                    </div>
+                </div>
+                <div class="col-md-4 scroll_img">
+                    <div>
+                    <a href="/home_services">
+                        <img src="images/gouttieres.png" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                    </a>
+                    <p style="margin-top:20px">Nettoyage de gouttières  </p>
+                </div>
+            </div>
+            <div class="col-md-4 scroll_img">
+                <div>
+                <a href="/home_services">
+                    <img src="images/terrain.png" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                </a>
+                <p style="margin-top:20px">Nettoyage de terrain </p>
+                </div>
+            </div>
+        </div>
+        {# Galerie end#}
+
+        {# Testimonials start#}
+
+
+        <div class="container py-5">
+            <h2 class="display-4 mb-3 text-center">Témoignages</h2>
+            
+            <div class="position-relative">
+            <div class="shape rounded-circle bg-soft-yellow rellax w-16 h-16" data-rellax-speed="1" style="bottom: 0.5rem; right: -1.7rem;"></div>
+            <div class="shape bg-dot primary rellax w-16 h-16" data-rellax-speed="1" style="top: -1rem; left: -1.7rem;"></div>
+            <div class="carousel owl-carousel gap-small" data-margin="0" data-dots="true" data-autoplay="false" data-autoplay-timeout="5000" data-responsive='{"0":{"items": "1"}, "768":{"items": "2"}, "992":{"items": "2"}, "1200":{"items": "3"}}'>
+                <div class="item">
+                <div class="item-inner">
+                    <div class="card">
+                    <div class="card-body">
+                        <blockquote class="icon mb-0">
+                        <p class="mb-4">“Ils font une très bonne JOB les amis.”</p>
+                        <div class="blockquote-details">
+                            <img class="rounded-circle w-12" src="images/client1.jpg" alt="" />
+                            <div class="info">
+                            <h5 class="mb-1">Mike Trudeau</h5>
+                            </div>
+                        </div>
+                        </blockquote>
+                    </div>
+                    <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.item-inner -->
+                </div>
+                <!-- /.item -->
+            </div>
+            <!-- /.owl-carousel -->
+            </div>
+            <!-- /.position-relative -->
+        </div>
+        <div style="items-align:center">
+            <div class="text-center">
+                <a class="btn btn-primary" href="https://www.facebook.com/profile.php?id=100057565894398" target="_blank">Commentaire</a>
+            </div>
+        </div>
+        {# Testimonials end#}
+
+
+       
+    </div>
+{% endblock %}

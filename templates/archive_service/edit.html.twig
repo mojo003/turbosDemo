@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Éditer un service{% endblock %}
+
+{% block body %}
+    <h1>Edit ArchiveService</h1>
+
+    {{ include('archive_service/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('archive_service_index') }}">back to list</a>
+
+    {{ include('archive_service/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un employé{% endblock %}
+
+{% block body %}
+
+ <div class="formulaireService"> 
+    <h1 class="formulaireServiceH1">Modifier un employé</h1>
+  
+
+    {{ include('employe/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('employe/_delete_form.html.twig') }}
+
+    <style>
+h1 {text-align: center; margin-top: 20px; }
+input {margin: 10px; }
+form { border:2px solid #005E9E;  text-align: center;}
+</style>
+</div
+
+{% endblock %}

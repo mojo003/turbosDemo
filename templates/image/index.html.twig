@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Répertoire d'images{% endblock %}
+
+{% block body %}
+    <h1 class="text-center" style="margin-top:20px">Répertoire d'images</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Caption</th>
+                <th>Description</th>
+                <th>Img</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for image in images %}
+            <tr>
+                <td>{{ image.caption }}</td>
+                <td>{{ image.description }}</td>
+                <td><img src="{{ asset(image.img) }}" alt="" height="150"></img></td>
+                <td>
+                    <form method="post" action="{{ path('image_delete', {'idImage': image.idImage}) }}" onsubmit="return confirm('Confirmer la suppression de l'image?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ image.idImage) }}">
+    <button class="btn"><span style='font-size:40px;'>&#10060;</span></button>
+</form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Aucune image trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('home_employes') }}"><span style='font-size:40px;'>&#9664;</span></a>
+
+
+
+    <a href="{{ path('image_new') }}"><span style='font-size:40px;'>➕</span></a>
+{% endblock %}

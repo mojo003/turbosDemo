@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Services{% endblock %}
+
+{% block body %}
+    <div class=grille>
+        <aside>
+            <h1>Liste des Services</h1>
+        </aside>
+        <aside>
+            <form name="search_form" action="/liste_services" method="GET"></br>
+                <input type="text" id="mots" name="mots" placeholder="Rechercher un service">
+                <input type="submit" value="Rechercher" class="btn btn-primary" >
+                <button type="button" class="btn btn-primary" style="background-color: #005e9e;"><a href="http://127.0.0.1:8000/liste_services"><i class="fa fa-refresh"></i></a></button>
+            </form>                              
+        </aside>
+
+    </div>
+    
+    </br></br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdService</th>
+                <th>TypeDeService</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for service in liste_services %}
+       <tr> 
+       <td>{{service.IdService }}</td> <td>{{ service.TypeDeService}}</td> <td><a href="{{ path('form_delete_service', {'idService': service.idService}) }}"><span style='font-size:20px;'>&#10060;</span></a></td>
+    {% endfor %}
+ 
+        </tbody>
+    </table>
+    
+    <a href="{{ path('home_employes') }}"><span style='font-size:40px;'>&#9664;</span></a>
+
+   <div class="formulaireService">  
+        <a href="{{ path('form_service') }}" class="btn btn-primary button_service_confirmation">Ajouter un service</a></br>
+  </div>
+
+{% endblock %}

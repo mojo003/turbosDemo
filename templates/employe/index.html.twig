@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portail employé{% endblock %}
+
+{% block body %}    
+    <div class=grille>
+        <aside>
+            <h1>Liste des Employés</h1>
+        </aside>
+        <aside>
+            <form name="search_form" action="/liste_employes" method="GET"></br>
+                <input type="text" id="nom" name="nom" placeholder="Rechercher un employé">
+                <input type="submit" value="Rechercher" class="btn btn-primary">
+                 <button type="button" class="btn btn-primary" style="background-color: #005e9e;"><a href="http://127.0.0.1:8000/liste_employes"><i class="fa fa fa-refresh"></i></a></button>
+            </form>                              
+        </aside>
+    </div>
+
+    </br></br>
+    <table class="table">
+
+        <thead>
+            <tr>
+                {#<th>IdEmploye</th>#}
+                <th>Nom</th>
+                <th>Prenom</th>
+                {#<th>Adresse</th>#}
+                <th>Telephone</th>
+                 <th>Courriel</th>
+                <th>actions</th>
+            </tr>
+
+
+   </thead>
+        <tbody>
+             {% for employe in liste_employes %}
+    <tr> 
+      {# <td>{{employe.idEmploye }}</td>#} <td>{{ employe.nom }}</td> <td>{{ employe.prenom }}</td> {# <td>{{ employe.adresse }}</td>#} <td>{{ employe.telephone }}</td> <td>{{ employe.courriel }}</td>
+       <td> <a href="{{ path('show_employe', {'idEmploye': employe.idEmploye}) }}"><span style='font-size:30px;'>&#129488;</span></a></td>
+     </tr>
+     {% endfor %}
+      
+        </tbody>
+    </table>
+
+    
+ <a href="{{ path('home_employes') }}"><span style='font-size:40px;'>&#9664;</span></a>
+
+    
+
+{% endblock %}

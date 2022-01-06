@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Turbo S{% endblock %}
+
+{% block body %}
+
+
+
+    <h1 class="text-center" style="margin-top:20px">Accueil des employés</h1>
+
+      <div class="formulaireService container ">  
+        
+        <div class="mb-2">
+          <a href="{{ path('demande_service') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Gestion de demandes de services</a>
+        </div>
+        
+        <div class="mb-2">
+          <a href="{{ path('archive_service') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Gestion des archives de services</a>
+        </div>
+        
+       {# <div class="mb-2">
+          <a href="{{ path('liste_services') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Gestion de liste de services</a>
+        </div> #}
+        
+        <div class="mb-2">
+          <a href="{{ path('liste_employes') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Gestion de comptes employés</a>
+        </div>
+        
+        <div class="mb-2">
+          <a href="{{ path('image_index') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Gestion d'images</a>
+        </div>
+        
+        <div class="mb-2">
+          <a href="{{ path('form_nouvel_employe') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Ajouter un nouvel employé</a>
+        </div>
+
+         <div class="mb-2">
+          <a href="{{ path('image_new') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Ajouter nouvelles images</a>
+        </div>
+        
+        {#<div class="mb-2">
+          <a href="{{ path('promotion_gestion') }}" class="btn btn-primary button_service_confirmation" style="width: 80%;">Gestion de promotion</a>
+        </div> #}
+      
+      </div>
+
+{% endblock %}

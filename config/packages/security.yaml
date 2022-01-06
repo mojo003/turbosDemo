@@ -1,0 +1,63 @@
+security:
+    # https://symfony.com/doc/current/security/authenticator_manager.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#c-hashing-passwords
+    password_hashers:
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
+        App\Entity\User:
+            algorithm: auto
+
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        # used to reload user from session & other features (e.g. switch_user)
+        app_user_provider:
+            entity:
+                class: App\Entity\User
+                property: email
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            provider: app_user_provider
+            custom_authenticator: App\Security\UserAuthenticator
+            logout:
+                path: app_logout
+                # where to redirect after logout
+                target: /home
+
+            # activate different ways to authenticate
+            # https://symfony.com/doc/current/security.html#firewalls-authentication
+
+            # https://symfony.com/doc/current/security/impersonating_user.html
+            # switch_user: true
+            #form_login: 
+                # "app_login" is the name of the login route
+             #   login_path: app_login
+             #   check_path: app_login
+    # Easy way to control access for large sections of your site
+    # Note: Only the *first* access control that matches will be used
+    access_control:
+        # - { path: ^/admin, roles: ROLE_ADMIN }
+        # - { path: ^/profile, roles: ROLE_USER }
+        - { path: /demande_service, roles: ROLE_USER }
+        - { path: /show_demande_service, roles: ROLE_USER }
+        - { path: /form_edit_demande_de_service, roles: ROLE_USER }
+        - { path: /form_delete_demande_service, roles: ROLE_USER }
+        - { path: /archive_service, roles: ROLE_USER }
+        - { path: /transfert_to_archive, roles: ROLE_USER }
+        - { path: /liste_employes, roles: ROLE_ADMIN }
+        - { path: /form_nouvel_employe, roles: ROLE_ADMIN }
+        - { path: /form_edit_employe, roles: ROLE_ADMIN }
+        - { path: /form_show_employe, roles: ROLE_ADMIN }
+        - { path: /form_delete_employe, roles: ROLE_ADMIN }
+        - { path: /home_employes, roles: ROLE_USER }
+        - { path: /promotion_gestion, roles: ROLE_USER }
+        - { path: /image, roles: ROLE_USER }
+        - { path: /register, roles: ROLE_ADMIN }
+        - { path: /liste_services, roles: ROLE_ADMIN }
+        - { path: /form_service, roles: ROLE_ADMIN }
+        - { path: /form_edit_service, roles: ROLE_ADMIN }
+        - { path: /show_service, roles: ROLE_ADMIN }
+        - { path: /form_delete_service, roles: ROLE_ADMIN }

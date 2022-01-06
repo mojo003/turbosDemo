@@ -1,0 +1,20 @@
+{% block body %}
+
+{{ form_start(formulaire) }}
+
+    {{form_widget(formulaire)}}
+
+        <div class="row button_service">
+            <div class="col-6"> 
+            <a href="{{ path('demande_service') }}" class="btn btn-primary">Annuler</a>
+            </div>
+
+            <div class="col-6">
+            <button class="btn btn-primary button_service">{{ button_label|default('Envoyer') }}</button>
+            </div>
+        </div>
+{{ form_end(formulaire) }}
+
+
+
+{% endblock %}

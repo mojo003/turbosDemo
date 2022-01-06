@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion d'images{% endblock %}
+
+{% block body %}
+
+<div class="formulaireService"> 
+    <h1 class="formulaireServiceH1">Ajouter nouvelles images</h1>
+
+    {{ include('image/_form.html.twig') }}
+ <a href="{{ path('home_employes') }}"><span style='font-size:40px;'>&#9664;</span></a>
+
+<style>
+h1 {text-align: center; margin-top: 20px; }
+input {margin: 10px; }
+form { border:2px solid #005E9E;  text-align: center;}
+</style>
+</div>
+
+{% endblock %}

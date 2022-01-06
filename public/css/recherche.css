@@ -1,0 +1,30 @@
+/**************************/
+/* Mise en forme générale */
+/**************************/
+* {
+  margin: 0;
+  padding: 0; 
+  box-sizing: border-box; 
+  word-wrap: break-word;
+}
+
+
+div {
+  grid-template-rows: auto;
+	grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "aside1  aside2";
+
+  text-align: center;
+
+}
+
+div > aside:first-of-type {
+  grid-area: aside1;
+}
+
+div > aside:nth-of-type(2) {
+  grid-area: aside2;
+  margin-bottom: 20px;
+}
+
+

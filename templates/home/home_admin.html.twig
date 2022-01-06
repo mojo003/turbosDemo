@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Turbo S{% endblock %}
+
+{% block body %}
+
+  <div class="formulaireService">  
+    <a href="{{ path('demande_de_service/index.html.twig') }}" class="btn btn-primary button_service_confirmation">Gestion de demandes de services</a>
+    <a href="{{ path('liste_employes') }}" class="btn btn-primary button_service_confirmation">Gestion de comptes employés</a>
+    <a href="{{ path('liste_services') }}" class="btn btn-primary button_service_confirmation">Gestion de liste de services</a>
+  </div>
+
+{% endblock %}

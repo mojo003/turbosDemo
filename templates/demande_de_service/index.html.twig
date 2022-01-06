@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demande de service{% endblock %}
+
+{% block body %}
+    
+    <div class=grille>
+        <aside>
+            <h1 class="text-center" style="margin-top:20px">Liste des demandes de service</h1>
+        <div class="mb-2">
+            <a href="{{ path('archive_service') }}" class="btn btn-primary button_service_confirmation">Gestion des archives de services</a>
+        </div>
+        </aside>
+        <aside>
+            <form name="search_form" action="/demande_service" method="GET"></br>
+                <input type="text" id="nom" name="nom" placeholder="Rechercher un employé">
+                <input type="submit" value="Rechercher" class="btn btn-primary">
+                 <button type="button" class="btn btn-primary" style="background-color: #005e9e;"><a href="http://127.0.0.1:8000/demande_service"><i class="fa fa fa-refresh"></i></a></button>
+            </form>                              
+        </aside>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Adresse</th>
+                 <th>Téléphone</th>
+                <th>Courriel</th>
+                 {#<th>Description</th>#}
+                <th>Date</th>
+                {#<th>Statut</th>#}
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+          {% for DemandeService in demande_service %}
+    <tr> 
+       <td>{{ DemandeService.nom }}</td> <td>{{ DemandeService.prenom }}</td> <td>{{ DemandeService.adresse }}</td>  <td>{{ DemandeService.telephone }}</td>  <td>{{ DemandeService.courriel }}</td>
+       {#<td>{{ DemandeService.Description }}</td>#} <td>{{ DemandeService.DateHeure|date('d-m-Y') }}</td>{#<td>{{ DemandeService.Statut }}</td>#}  <td> <a href="{{ path('show_demande_service', {'idDemandeService': DemandeService.idDemandeService}) }}"><span style='font-size:20px;'>&#129488;</span></a>                  
+       <a href="{{ path('form_edit_demande_de_service', {'idDemandeService': DemandeService.idDemandeService}) }}">📄</a> <a href="{{ path('form_delete_demande_service', {'idDemandeService': DemandeService.idDemandeService}) }}">✅</a>
+     {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('home_employes') }}"><span style='font-size:40px;'>&#9664;</span></a>
+
+{% endblock %}

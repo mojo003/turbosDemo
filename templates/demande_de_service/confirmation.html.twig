@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Confirmation{% endblock %}
+
+{% block body %}
+
+  <div class="formulaireService">  
+    <h1>Formulaire de demande de service</h1>
+
+    <p class="confirmation_p"><strong>Votre demande à bien été envoyée!</strong></p>
+
+    <a href="{{ path('home') }}" class="button_margin btn btn-primary button_service_confirmation">Retour à la page d'accueil</a>
+  </div>
+
+{% endblock %}

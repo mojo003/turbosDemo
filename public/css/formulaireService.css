@@ -1,0 +1,45 @@
+.formulaireService {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.form-check-input {
+  visibility: visible;
+}
+
+.form-check-label {
+  visibility: visible;
+}
+
+.statut_checkbox {
+  visibility: hidden;
+}
+
+.statut_box {
+  visibility: hidden;
+}
+
+.date_heure {
+  visibility: hidden;
+}
+
+.button_service {
+  margin-bottom: 30%;
+
+}
+
+.button_margin {
+  margin-bottom: 60%;
+}
+
+.confirmation_p {
+  font-size: large;
+  border: 2px solid green;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #61d92d;
+}
+
+.btn{
+  margin-bottom: 1px;
+}

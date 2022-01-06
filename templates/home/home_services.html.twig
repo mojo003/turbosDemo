@@ -1,0 +1,294 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galerie photos{% endblock %}
+
+
+{% block body %}
+   
+  
+
+<h1 class="text-center" style="margin-top:20px"> Plus de photos !!!</h1>
+   {# <div class="tableHomeService">
+
+      <table>
+      
+         {% for service in liste_services %}
+
+       <tr><td>{{ service.TypeDeService}}</td></tr> 
+
+    {% endfor %}
+
+      </table>
+
+      </div>#}
+
+   {#<h2 class="text-center" style="margin-top:100px">Plus de photos !!!</h2>#}
+
+    <div class="galerie">
+
+       <style>
+              .galerie {
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+               
+                margin-left:15%;
+               
+                }
+
+            
+             </style>
+       
+      
+         {% for image in galerie_images %}
+
+       {#<td>{{image.idImage}}</td> <td>{{image.caption}}</td><td>{{image.description}}</td>  #} 
+          
+
+     
+       <div><img src="{{ asset(image.img) }}" alt="" height="400"></img></div>
+
+
+
+
+       {% endfor %}
+
+      
+
+    </div>
+
+<a href="{{ path('home') }}"><span style='font-size:40px;'>&#9664;</span></a>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    {#<div style="margin:20px 150px 50px 150px">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+             
+                    <img src="images/batiment.PNG" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                    <div class="caption"></br>
+                    </div>
+                
+            
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                
+                    <img src="images/cedres.png" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                    <div class="caption"></br>
+                    </div>
+                
+              
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+              
+                    <img src="images/nettoyage.png" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                
+               
+                </div>
+            </div>
+          </div>
+            <div class="row" style="margin-top:20px ">
+                <div class="col-md-4">
+                    <div>
+                 
+                        <img src="images/pavage.PNG" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                    
+               
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                
+                        <img src="images/gouttieres.png" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                  
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+               
+                    <img src="images/terrain.png" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                
+                
+                </div>
+            </div>
+
+             <div class="row" style="margin-top:20px ">
+                <div class="col-md-4">
+                    <div>
+                 
+                        <img src="images/cloture1.1.jpg" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                    
+               
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                
+                        <img src="images/cloture1.2.jpg" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                  
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+               
+                    <img src="images/pick-up.png" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                
+                
+                </div>
+            </div>
+
+             <div class="row" style="margin-top:20px ">
+                <div class="col-md-4">
+                    <div>
+                 
+                        <img src="images/feuilles1.1.jpg" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                    
+               
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                
+                        <img src="images/feuilles1.2.jpg" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                  
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+               
+                    <img src="images/gM1.1.jpg" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                
+                
+                </div>
+            </div>
+
+               <div class="row" style="margin-top:20px ">
+                <div class="col-md-4">
+                    <div>
+                 
+                        <img src="images/gM1.1.jpg" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                    
+               
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                
+                        <img src="images/gP1.1.jpg" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                  
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+               
+                    <img src="images/gP1.2.jpg" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                
+                
+                </div>
+            </div>
+
+                <div class="row" style="margin-top:20px ">
+                <div class="col-md-4">
+                    <div>
+                 
+                        <img src="images/pavage1.1.jpg" alt="Lights" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                    
+               
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div>
+                
+                        <img src="images/pavage1.2.jpg" alt="Nature" class="rounded mx-auto d-block" style="width:100%">
+                        <div class="caption"></br>
+                        </div>
+                  
+                    
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+               
+                    <img src="images/pavage1.3.jpg" class="rounded mx-auto d-block" alt="Fjords" style="width:100%">
+                    <div class="caption">
+                    </br>
+                    </div>
+                
+                
+                </div>
+            </div>
+        </div>#}
+
+       
+  

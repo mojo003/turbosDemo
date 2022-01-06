@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edition d'un demande de service{% endblock %}
+{% form_theme formulaire 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+    <h1 class="text-center" style="margin-top:20px">Modifier la Demande de service</h1>
+
+    {{ include('demande_de_service/_form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('demande_service') }}">back to list</a>
+
+   {# {{ include('demande_de_service/_delete_form.html.twig') }} #}
+{% endblock %}

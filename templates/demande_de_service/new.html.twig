@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Formulaire demande de service{% endblock %}
+{% form_theme formulaire 'bootstrap_5_layout.html.twig' %}
+{% block body %}
+  <div class="formulaireService">  
+    <h1 class="formulaireServiceH1">Formulaire de demande de service</h1>
+
+    {{ include('demande_de_service/_form.html.twig') }}
+  </div>
+  {#  <a href="{{ path('demande_service') }}">back to list</a> #}
+    
+{% endblock %}
+
